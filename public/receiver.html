@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One</title>
+</head>
+<body>
+     <div class="container">
+
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+    <script>
+         const socket = io();
+
+        
+         socket.on('msg', (msg) => {
+   
+            document.querySelector(".container").innerHTML = msg.innerHTML;
+        });
+
+    </script>
+</body>
+</html>

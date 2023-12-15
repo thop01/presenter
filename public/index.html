@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One</title>
+</head>
+<body>
+       <div class="container" contenteditable="true">
+        <h1>Editable container</h1>
+        <p>Editable text</p>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+    <script>
+         const socket = io();
+        
+       
+    
+         document.querySelector(".container").addEventListener("keyup", (e)=>{
+            console.log(event);
+                socket.emit('msg', {
+                    innerHTML: document.querySelector(".container").innerHTML
+                });
+         })
+
+
+    </script>
+</body>
+</html>
